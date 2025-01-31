@@ -21,7 +21,7 @@ function showContent(category) {
 
 const buttons = document.querySelectorAll("nav button");
 
-//"Active" har jag fått hjälp av w3schools och chatgpt.
+//"Active" har jag fått hjälp av w3schools och chatgpt. https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element
 for (let index = 0; index < buttons.length; index++) {
     buttons[index].addEventListener("click", () => {
         
@@ -31,7 +31,9 @@ for (let index = 0; index < buttons.length; index++) {
 
         buttons[index].classList.add("active");
 
-        showContent(buttons[index].id);
+        //Hjälp av chatgpt att få mitt id att matcha med category sanity and headless cms.
+        let categoryId = buttons[index].id.replace(/-/g, " "); 
+        showContent(categoryId);
     });
 }
 
